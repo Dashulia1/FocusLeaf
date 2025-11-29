@@ -1,0 +1,225 @@
+<resources>
+    <string name="app_name">FocusLeaf</string>
+    
+    <!-- Login Screen -->
+    <string name="create_your_account">Create your account</string>
+    <string name="login_subtitle">Сфокусируйте на главном. Добивайтесь большего каждый день.</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="log_in">Log in</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="or">OR</string>
+    <string name="registration_success">Регистрация успешна</string>
+    
+    <!-- Validation errors -->
+    <string name="error_email_required">Email обязателен</string>
+    <string name="error_email_invalid">Некорректный формат email</string>
+    <string name="error_password_required">Пароль обязателен</string>
+    <string name="error_password_too_short">Пароль должен содержать минимум 6 символов</string>
+    <string name="error_passwords_not_match">Пароли не совпадают</string>
+    
+    <!-- Onboarding Screen 0 -->
+    <string name="onboarding_0_subtitle">Ваш персональный проводник к осознанной продуктивности</string>
+    <string name="onboarding_next">Далее</string>
+    
+    <!-- Onboarding Screen 1 -->
+    <string name="onboarding_1_title">Устал от прокрастинации?</string>
+    <string name="onboarding_1_description">Постоянные уведомления, социальные сети и бесконечные пять минут крадут твое время.</string>
+    
+    <!-- Onboarding Screen 2 -->
+    <string name="onboarding_2_title">Сфокусируйся на главном</string>
+    <string name="onboarding_2_description">FocusLeaf помогает разбить работу на интервалы, следуя технике Pomodoro. Работай сконцентрированно, отдыхай осознанно.</string>
+    
+    <!-- Onboarding Screen 3 -->
+    <string name="onboarding_3_title">Добивайся большего каждый день!</string>
+    <string name="onboarding_3_description">Завершай задачи, строй полезные привычки и возвращай себе контроль над своим временем</string>
+    <string name="onboarding_start">Начать фокусироваться</string>
+    
+    <!-- Auth Screen Strings -->
+    <string name="sign_up_title">Sign up</string>
+    <string name="create_account_title">Create Your Account</string>
+    <string name="email">Email</string>
+    <string name="email_placeholder">example@example</string>
+    <string name="password_placeholder">Enter password</string>
+    <string name="get_started">Get Started</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="already_have_account_login">Already have an account? Login up</string>
+    <string name="time_9_41">9:41</string>
+    <string name="back">Back</string>
+    
+    <!-- Main Screen Strings -->
+    <string name="good_day">Добрый день, Дашуля</string>
+    <string name="statistics_today">Статистика за сегодня</string>
+    <string name="completed_tasks">%1$d завершённых задачи</string>
+    <string name="timer_work">Work</string>
+    <string name="timer_meditation">Медитация</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_skip">Skip</string>
+    <string name="button_quit">Quit</string>
+    <string name="analytics_today">Аналитика за СЕГОДНЯ</string>
+    <string name="analytics_week">Аналитика за НЕДЕЛЮ</string>
+    <string name="session_completed">Сессия завершена!</string>
+    <string name="timer_format">%02d:%02d</string>
+    <string name="edit">Edit</string>
+    
+    <!-- Projects Screen Strings -->
+    <string name="my_projects">МОИ ПРОЕКТЫ</string>
+    <string name="create_project">Создать проект</string>
+    <string name="task_count">Количество задач: %1$d</string>
+    <string name="total_time">Общее время: %1$d минут</string>
+    <string name="drawing_project">Рисование</string>
+    <string name="dancing_project">Танцы</string>
+    <string name="meditation_project">Медитация</string>
+    <string name="no_projects">Нет проектов</string>
+    <string name="create_project_dialog_title">Создать проект</string>
+    <string name="project_name">Название проекта</string>
+    <string name="create">Создать</string>
+    <string name="cancel">Отмена</string>
+    <string name="projects_section_title">ПРОЕКТЫ</string>
+    <string name="statistics_section_title">СТАТИСТИКА</string>
+    <string name="task_count_label">Количество задач</string>
+    <string name="total_time_label">Общее время</string>
+    <string name="office_project">Office Project</string>
+    <string name="daily_study">Daily Study</string>
+    <string name="total_tasks">Всего задач: %1$d</string>
+    <string name="project_tasks">Задач в проекте: %1$d</string>
+    <string name="project_time">Время на задачу: %1$d минут</string>
+    <string name="priority_low">Низкий</string>
+    <string name="priority_medium">Средний</string>
+    <string name="priority_high">Высокий</string>
+    <string name="project_details">Детали проекта</string>
+    <string name="project_name_label">Проект: %1$s</string>
+    <string name="priority_label">Приоритет: %1$s</string>
+    <string name="estimated_time_label">Время на задачу: %1$d минут</string>
+    <string name="task_count_in_project">Количество задач: %1$d</string>
+    <string name="project_total_time_label">Общее время проекта: %1$d минут</string>
+    <string name="nav_statistics">Статистика</string>
+    <string name="nav_projects">Проекты</string>
+    <string name="projects">Проекты</string>
+    <string name="minutes_format">%1$d минут</string>
+    
+    <!-- Projects Search Screen Strings -->
+    <string name="search_project_hint">Название проекта, цвет</string>
+    <string name="project_filter_label">Проект:</string>
+    <string name="filter_all">Все</string>
+    <string name="filter_active">Активные</string>
+    <string name="filter_deferred">Отложенные</string>
+    <string name="tasks_list_title">Список задач:</string>
+    <string name="cleaning_project">Уборка</string>
+    
+    <!-- Create Project Screen Strings -->
+    <string name="task_name_hint">Название задачи</string>
+    <string name="color_selection">Выбор цвета</string>
+    <string name="priority_label_with_colon">Приоритет:</string>
+    <string name="time_estimation">Оценка времени</string>
+    <string name="tomatoes_count_format">Помидоров: %1$d</string>
+    <string name="save">Сохранить</string>
+    
+    <!-- Project Colors -->
+    <string name="color_soft_pink">Нежно-розовый</string>
+    <string name="color_soft_purple">Нежно-фиолетовый</string>
+    <string name="color_light_blue">Голубой</string>
+    <string name="color_gray">Серый</string>
+    
+    <!-- Analytics Screen Strings -->
+    <string name="today">Сегодня</string>
+    <string name="focus_time">Фокус-время: %1$dm</string>
+    <string name="average_concentration">Средняя концентрация: %1$d%%</string>
+    <string name="analytics">Аналитика</string>
+    <string name="week">Неделя</string>
+    <string name="current_week">Текущая неделя</string>
+    <string name="previous_week">Предыдущая неделя</string>
+    <string name="mon">Пн</string>
+    <string name="tue">Вт</string>
+    <string name="wed">Ср</string>
+    <string name="thu">Чт</string>
+    <string name="fri">Пт</string>
+    <string name="sat">Сб</string>
+    <string name="sun">Вс</string>
+    
+    <!-- Missing String Resources (Default Values) -->
+    <string name="error_invalid_email">Invalid email format</string>
+    <string name="error_required_field">This field is required</string>
+    <string name="good_afternoon">Good afternoon</string>
+    <string name="good_evening">Good evening</string>
+    <string name="good_morning">Good morning</string>
+    <string name="high_priority">High</string>
+    <string name="login">Login</string>
+    <string name="login_successful">Login successful</string>
+    <string name="low_priority">Low</string>
+    <string name="medium_priority">Medium</string>
+    <string name="pause">Pause</string>
+    <string name="priority">Priority</string>
+    <string name="project_created">Project created</string>
+    <string name="quit">Quit</string>
+    <string name="registration_successful">Registration successful</string>
+    <string name="search_projects">Search projects</string>
+    <string name="skip">Skip</string>
+    <string name="statistics">Statistics</string>
+    <string name="task_name">Task name</string>
+    <string name="tasks_count">Tasks count</string>
+    <string name="today_statistics">Today statistics</string>
+    <string name="tomatoes_count">Tomatoes count</string>
+    <string name="welcome">Welcome</string>
+    <string name="work">Work</string>
+    
+    <!-- Friends Search -->
+    <string name="friends_search_title">Поиск пользователей</string>
+    <string name="search_users_hint">Поиск пользователей</string>
+    <string name="in_focus_15_minutes">В фокусе 25 минут</string>
+    <string name="friend_avatar">Friend avatar</string>
+    <string name="chat">Chat</string>
+    
+    <!-- Group Session -->
+    <string name="group_session_title">Совместная сессия</string>
+    <string name="quick_chat_support">Быстрая поддержка в чате</string>
+    <string name="join_session">Присоединиться</string>
+    <string name="leave_session">Выйти</string>
+    
+    <!-- Chat -->
+    <string name="chat_support">Поддержка</string>
+    <string name="type_message">Введите сообщение...</string>
+    <string name="send">Отправить</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">Личный кабинет</string>
+    <string name="profile_user_name">Дашуля</string>
+    <string name="profile_user_email">daria.degtyarevaa@mail.ru</string>
+    <string name="streak_days">дней подряд</string>
+    <string name="total_sessions">всего сессий</string>
+    <string name="achievements">ДОСТИЖЕНИЯ</string>
+    <string name="achievement_hours">100 часов в фокусе</string>
+    <string name="achievement_max_tasks">Максимальное количество выполненных задач</string>
+    <string name="achievement_streak">7 дней подряд</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Timer Settings -->
+    <string name="timer_settings_title">Таймер</string>
+    <string name="timer_time_settings">Настройки времени</string>
+    <string name="work_time_label">Рабочее время (25 минут)</string>
+    <string name="short_break_label">Короткий перерыв (5 минут)</string>
+    <string name="long_break_label">Длинный перерыв (15 минут)</string>
+    <string name="sessions_before_long_break">Сессий до длинного перерыва</string>
+    <string name="timer_automation_settings">Настройки автоматизации</string>
+    <string name="auto_start_sessions">Сеансы автоматического запуска</string>
+    <string name="automatic_notification">Автоматическое уведомление</string>
+    
+    <!-- Notification Settings -->
+    <string name="notification_settings_title">Настройки уведомлений</string>
+    <string name="push_notifications">Push-уведомления</string>
+    <string name="session_end">Окончание сессии</string>
+    <string name="break_reminders">Напоминания о перерывах</string>
+    <string name="friends_online">Друзья онлайн</string>
+    
+    <!-- Theme Settings -->
+    <string name="app_theme_title">Тема приложения</string>
+    <string name="system_theme">Системная</string>
+    <string name="system_theme_description">Следует настройкам вашего устройства</string>
+    <string name="light_theme">Светлая</string>
+    <string name="light_theme_description">Яркая и чистая тема</string>
+    <string name="dark_theme">Тёмная</string>
+    <string name="dark_theme_description">Экономит заряд батареи</string>
+</resources>

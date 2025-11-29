@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_pink_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Кастомный статус бар с временем -->
+            <LinearLayout
+                android:id="@+id/llStatusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp">
+
+                <!-- Кнопка назад -->
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/back"
+                    android:padding="8dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:tint="@color/project_card_text_primary"
+                    tools:ignore="ContentDescription" />
+
+                <!-- Время -->
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/time_9_41"
+                    android:textColor="@color/project_card_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <!-- Пустой элемент для баланса -->
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <!-- Белая карточка с формой -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                app:cardBackgroundColor="@color/project_card_background"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Поле "Название задачи" -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilTaskName"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:hint="@string/task_name_hint"
+                        app:boxBackgroundColor="@color/project_card_background"
+                        app:boxStrokeColor="@color/project_stat_text"
+                        app:hintTextColor="@color/project_card_text_secondary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTaskName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/task_name_hint"
+                            android:textColor="@color/project_card_text_primary"
+                            android:textColorHint="@color/project_card_text_secondary"
+                            android:textSize="16sp"
+                            android:maxLines="1"
+                            android:inputType="textCapSentences|textAutoCorrect"
+                            android:imeOptions="actionDone"
+                            android:importantForAutofill="yes"
+                            android:autofillHints="name"
+                            tools:text="Медитация" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Выбор цвета -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/color_selection"
+                        android:textColor="@color/project_card_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Выбор цвета" />
+
+                    <!-- Палитра цветов -->
+                    <LinearLayout
+                        android:id="@+id/llColorPalette"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="24dp">
+
+                        <!-- Цвета будут добавляться программно -->
+
+                    </LinearLayout>
+
+                    <!-- Выбор приоритета -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/priority_label_with_colon"
+                        android:textColor="@color/project_card_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Приоритет:" />
+
+                    <RadioGroup
+                        android:id="@+id/rgPriority"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rbLowPriority"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/priority_low"
+                            android:textColor="@color/project_card_text_primary"
+                            app:buttonTint="@color/project_stat_text"
+                            tools:text="Низкий" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rbMediumPriority"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/priority_medium"
+                            android:textColor="@color/project_card_text_primary"
+                            app:buttonTint="@color/project_stat_text"
+                            android:checked="true"
+                            tools:text="Средний" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rbHighPriority"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/priority_high"
+                            android:textColor="@color/project_card_text_primary"
+                            app:buttonTint="@color/project_stat_text"
+                            tools:text="Высокий" />
+
+                    </RadioGroup>
+
+                    <!-- Оценка времени -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/time_estimation"
+                        android:textColor="@color/project_card_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Оценка времени" />
+
+                    <!-- SeekBar для выбора времени -->
+                    <SeekBar
+                        android:id="@+id/sbTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="3"
+                        android:progress="1"
+                        android:progressTint="@color/project_stat_text"
+                        android:thumbTint="@color/project_card_background"
+                        android:layout_marginBottom="8dp"
+                        tools:progress="1" />
+
+                    <!-- Метки под SeekBar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:text="0"
+                            android:textColor="@color/project_card_text_secondary"
+                            android:textSize="14sp"
+                            tools:text="0" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="25"
+                            android:textColor="@color/project_card_text_secondary"
+                            android:textSize="14sp"
+                            tools:text="25" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="50"
+                            android:textColor="@color/project_card_text_secondary"
+                            android:textSize="14sp"
+                            tools:text="50" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="75"
+                            android:textColor="@color/project_card_text_secondary"
+                            android:textSize="14sp"
+                            tools:text="75" />
+
+                    </LinearLayout>
+
+                    <!-- Текст с количеством помидоров -->
+                    <TextView
+                        android:id="@+id/tvTomatoCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:gravity="center"
+                        android:text="@string/tomatoes_count_format"
+                        android:textColor="@color/project_stat_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="Помидоров: 1" />
+
+                    <!-- Кнопка сохранения -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="@string/save"
+                        android:textColor="@color/project_card_background"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/project_stat_text"
+                        app:cornerRadius="12dp"
+                        tools:text="Сохранить" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

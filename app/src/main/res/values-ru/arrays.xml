@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="priorities">
+        <item>Низкий</item>
+        <item>Средний</item>
+        <item>Высокий</item>
+    </string-array>
+    
+    <string-array name="project_types">
+        <item>Работа</item>
+        <item>Учеба</item>
+        <item>Личное</item>
+        <item>Здоровье</item>
+    </string-array>
+</resources>
+

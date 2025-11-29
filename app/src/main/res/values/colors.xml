@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- FocusLeaf Dark Theme Colors -->
+    <color name="primary">#4CAF50</color>
+    <color name="surface">#121212</color>
+    <color name="on_surface">#FFFFFF</color>
+    <color name="outline">#BDBDBD</color>
+    <color name="error">#CF6679</color>
+    
+    <!-- Additional colors -->
+    <color name="secondary_text">#BDBDBD</color>
+    
+    <!-- Общий розовый градиент для всех экранов -->
+    <color name="pink_gradient_start">#FFF5F7</color>
+    <color name="pink_gradient_end">#FFEBF0</color>
+    
+    <!-- Onboarding Light Theme Colors -->
+    <color name="onboarding_background">#FFF5F7</color>
+    <color name="onboarding_card">#FFFFFF</color>
+    <color name="onboarding_pink">#FF6B9D</color>
+    <color name="onboarding_text_primary">#1A1A1A</color>
+    <color name="onboarding_text_secondary">#666666</color>
+    <color name="onboarding_gradient_start">#FFF5F7</color>
+    <color name="onboarding_gradient_end">#FFEBF0</color>
+    
+    <!-- Auth Light Theme Colors -->
+    <color name="auth_background_gradient_start">#FFF5F7</color>
+    <color name="auth_background_gradient_end">#FFFFFF</color>
+    <color name="auth_card_background">#FFFFFF</color>
+    <color name="auth_text_primary">#1A1A1A</color>
+    <color name="auth_text_secondary">#666666</color>
+    <color name="auth_accent_purple">#FF6B9D</color>
+    <color name="auth_field_border">#E0E0E0</color>
+    <color name="auth_placeholder_text">#999999</color>
+    
+    <!-- Main Screen Light Theme Colors -->
+    <color name="main_background">#FFFFFF</color>
+    <color name="main_text_primary">#1A1A1A</color>
+    <color name="main_text_secondary">#666666</color>
+    <color name="main_accent_purple">#9C27B0</color>
+    <color name="main_timer_color">#9C27B0</color>
+    <color name="main_button_bg">#F3E5F5</color>
+    <color name="main_statistics_icon">#9C27B0</color>
+    <color name="main_progress_done">#9C27B0</color>
+    <color name="main_progress_not_done">#E0E0E0</color>
+    <color name="main_tab_selected">#9C27B0</color>
+    <color name="main_tab_unselected">#999999</color>
+    
+    <!-- Projects Screen Colors -->
+    <color name="project_card_background">#FFFFFF</color>
+    <color name="project_card_text_primary">#1A1A1A</color>
+    <color name="project_card_text_secondary">#666666</color>
+    <color name="project_stat_bg">#FFF5F7</color>
+    <color name="project_stat_text">#FF6B9D</color>
+    <color name="project_fab_color">#FF6B9D</color>
+    
+    <!-- Statistics Cards Colors -->
+    <color name="stat_card_background">#1E1E1E</color>
+    <color name="stat_card_text_primary">#FFFFFF</color>
+    <color name="stat_card_text_secondary">#BDBDBD</color>
+    <color name="stat_task_accent">#2196F3</color>
+    <color name="stat_time_accent">#4CAF50</color>
+    
+    <!-- Project Colors -->
+    <color name="project_color_purple">#9C27B0</color>
+    <color name="project_color_pink">#E91E63</color>
+    
+    <!-- Project Color Palette -->
+    <color name="project_color_soft_pink">#FFB6C1</color>
+    <color name="project_color_soft_purple">#ECD6FF</color>
+    <color name="project_color_light_blue">#87CEEB</color>
+    <color name="project_color_gray">#B0B0B0</color>
+</resources>

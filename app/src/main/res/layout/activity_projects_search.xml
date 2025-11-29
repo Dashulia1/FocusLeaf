@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_pink_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Кастомный статус бар с временем -->
+            <LinearLayout
+                android:id="@+id/llStatusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp">
+
+                <!-- Кнопка назад -->
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/back"
+                    android:padding="8dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:tint="@color/project_card_text_primary"
+                    tools:ignore="ContentDescription" />
+
+                <!-- Время -->
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/time_9_41"
+                    android:textColor="@color/project_card_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <!-- Кнопка домой -->
+                <ImageButton
+                    android:id="@+id/ibHome"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/back"
+                    android:padding="8dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:tint="@color/project_card_text_primary"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <!-- Белая карточка с контентом -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/project_card_background"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Поле поиска -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSearch"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:hint="@string/search_project_hint"
+                        app:boxBackgroundColor="@color/project_card_background"
+                        app:boxStrokeColor="@color/project_stat_text"
+                        app:startIconDrawable="@android:drawable/ic_menu_search"
+                        app:startIconTint="@color/project_stat_text"
+                        app:hintTextColor="@color/project_stat_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/search_project_hint"
+                            android:textColor="@color/project_card_text_primary"
+                            android:textColorHint="@color/project_card_text_secondary"
+                            android:textSize="16sp"
+                            android:inputType="textCapSentences|textAutoCorrect"
+                            android:imeOptions="actionSearch"
+                            android:importantForAutofill="yes" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Фильтры проектов -->
+                    <TextView
+                        android:id="@+id/tvFilterLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/project_filter_label"
+                        android:textColor="@color/project_card_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Проект:" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="32dp">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cbFilterAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:text="@string/filter_all"
+                            android:textColor="@color/project_card_text_primary"
+                            app:buttonTint="@color/project_stat_text"
+                            android:checked="true"
+                            tools:text="Все" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cbFilterActive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_active"
+                            android:textColor="@color/project_card_text_primary"
+                            app:buttonTint="@color/project_stat_text"
+                            tools:text="Активные" />
+
+                    </LinearLayout>
+
+                    <!-- Список проектов -->
+                    <TextView
+                        android:id="@+id/tvTasksListTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/tasks_list_title"
+                        android:textColor="@color/project_card_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Список задач:" />
+
+                    <!-- RecyclerView для списка проектов -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProjects"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_project_search" />
+
+                    <!-- Пустое состояние -->
+                    <TextView
+                        android:id="@+id/tvEmptyState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        android:gravity="center"
+                        android:text="@string/no_projects"
+                        android:textColor="@color/project_card_text_secondary"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        tools:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

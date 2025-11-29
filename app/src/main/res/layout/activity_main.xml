@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_pink_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Кастомный статус бар с временем -->
+            <LinearLayout
+                android:id="@+id/llStatusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp">
+
+                <!-- Кнопка назад -->
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:tint="@color/main_text_primary"
+                    android:contentDescription="@string/back"
+                    tools:ignore="ContentDescription" />
+
+                <!-- Время 9:41 по центру -->
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/time_9_41"
+                    android:textColor="@color/main_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="9:41" />
+
+                <!-- Иконка дома -->
+                <ImageView
+                    android:id="@+id/ivHome"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:tint="@color/main_text_primary"
+                    android:contentDescription="@string/app_name"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <!-- Приветствие -->
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="@string/good_day"
+                android:textColor="@color/main_text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Добрый день, Дашуля" />
+
+            <!-- Статистика за сегодня -->
+            <LinearLayout
+                android:id="@+id/llStatistics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Иконка статистики -->
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/circular_indicator"
+                        android:backgroundTint="@color/main_statistics_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <!-- Текст статистики -->
+                    <TextView
+                        android:id="@+id/tvStatistics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/statistics_today"
+                        android:textColor="@color/main_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="Статистика за сегодня" />
+
+                </LinearLayout>
+
+                <!-- Количество завершенных задач -->
+                <TextView
+                    android:id="@+id/tvCompletedTasks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/completed_tasks"
+                    android:textColor="@color/main_text_secondary"
+                    android:textSize="14sp"
+                    tools:text="0 завершённых задачи" />
+
+            </LinearLayout>
+
+            <!-- Круглый таймер с прогрессом -->
+            <FrameLayout
+                android:id="@+id/flTimer"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center">
+
+                <!-- Кастомный круглый таймер с прогрессом -->
+                <com.dasasergeeva.focusleaf2.ui.CircleTimerView
+                    android:id="@+id/circleTimerView"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    tools:progress="50" />
+
+                <!-- Центральный текст таймера -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+                    <!-- Время -->
+                    <TextView
+                        android:id="@+id/tvTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25:00"
+                        android:textColor="@color/main_timer_color"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        tools:text="25:00" />
+
+                    <!-- Метка (Work/Медитация) -->
+    <TextView
+                        android:id="@+id/tvTimerLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/timer_meditation"
+                        android:textColor="@color/main_text_primary"
+                        android:textSize="16sp"
+                        tools:text="Медитация" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Индикаторы прогресса сессий (4 круга) -->
+            <LinearLayout
+                android:id="@+id/llSessionIndicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!-- Индикаторы создаются программно -->
+            </LinearLayout>
+
+            <!-- Панель управления таймером -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Кнопка Pause -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPause"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/main_button_bg"
+                    android:text="@string/button_pause"
+                    android:textColor="@color/main_timer_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_media_pause"
+                    app:iconTint="@color/main_timer_color"
+                    app:strokeWidth="0dp"
+                    tools:text="Pause" />
+
+                <!-- Кнопка Skip -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSkip"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/main_button_bg"
+                    android:text="@string/button_skip"
+                    android:textColor="@color/main_timer_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_media_next"
+                    app:iconTint="@color/main_timer_color"
+                    app:strokeWidth="0dp"
+                    tools:text="Skip" />
+
+                <!-- Кнопка Quit -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnQuit"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/main_button_bg"
+                    android:text="@string/button_quit"
+                    android:textColor="@color/error"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_close_clear_cancel"
+                    app:iconTint="@color/error"
+                    app:strokeWidth="0dp"
+                    tools:text="Quit" />
+
+            </LinearLayout>
+
+            <!-- Иконка редактирования -->
+            <ImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"
+                android:src="@android:drawable/ic_menu_edit"
+                android:tint="@color/main_text_secondary"
+                android:contentDescription="@string/edit"
+                tools:ignore="ContentDescription" />
+
+            <!-- TabLayout для аналитики -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutAnalytics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                app:tabBackground="@color/white"
+                app:tabIndicatorColor="@color/main_tab_selected"
+                app:tabIndicatorHeight="3dp"
+                app:tabSelectedTextColor="@color/main_tab_selected"
+                app:tabTextColor="@color/main_tab_unselected"
+                app:tabMode="fixed"
+                app:tabGravity="fill"
+                app:tabRippleColor="@android:color/transparent" />
+
+            <!-- ViewPager2 для контента аналитики -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerAnalytics"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="24dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Главная FAB кнопка (Настройки) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:contentDescription="@string/settings"
+        app:backgroundTint="#2196F3"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_settings"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription" />
+
+    <!-- FloatingActionButton для настроек (раскрывающееся меню - верхняя) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="400dp"
+        android:alpha="0"
+        android:contentDescription="@string/settings"
+        android:scaleX="0"
+        android:scaleY="0"
+        android:visibility="gone"
+        app:backgroundTint="#2196F3"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_settings"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription" />
+
+    <!-- FloatingActionButton для профиля (раскрывающееся меню - 2) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="320dp"
+        android:alpha="0"
+        android:contentDescription="@string/profile_title"
+        android:scaleX="0"
+        android:scaleY="0"
+        android:visibility="gone"
+        app:backgroundTint="#2196F3"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_profile"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription" />
+
+    <!-- FloatingActionButton для поиска друзей (раскрывающееся меню - 3) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabFriendsSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="240dp"
+        android:alpha="0"
+        android:contentDescription="@string/friends_search_title"
+        android:scaleX="0"
+        android:scaleY="0"
+        android:visibility="gone"
+        app:backgroundTint="#2196F3"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_friends"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription" />
+
+    <!-- FloatingActionButton для аналитики проектов (раскрывающееся меню - нижняя) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProjectAnalytics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="160dp"
+        android:alpha="0"
+        android:contentDescription="@string/projects"
+        android:scaleX="0"
+        android:scaleY="0"
+        android:visibility="gone"
+        app:backgroundTint="#2196F3"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_project"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

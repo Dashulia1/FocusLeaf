@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!-- Белая карточка с закругленными углами -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:cardBackgroundColor="@color/onboarding_card"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Место для иллюстрации (может быть заменено на ImageView) -->
+            <View
+                android:id="@+id/placeholderIllustration"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:drawable/ic_menu_gallery"
+                android:backgroundTint="#FFB5D1"
+                tools:ignore="ContentDescription" />
+
+            <!-- Логотип FocusLeaf -->
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="serif"
+                android:text="@string/app_name"
+                android:textColor="@color/onboarding_text_primary"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:text="FocusLeaf" />
+
+            <!-- Подзаголовок -->
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/onboarding_0_subtitle"
+                android:textColor="@color/onboarding_text_secondary"
+                android:textSize="16sp"
+                tools:text="Ваш персональный проводник к осознанной продуктивности" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

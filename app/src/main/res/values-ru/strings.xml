@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Общие строки -->
+    <string name="app_name">FocusLeaf</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="login">Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    
+    <!-- Главный экран -->
+    <string name="good_morning">Доброе утро</string>
+    <string name="good_afternoon">Добрый день</string>
+    <string name="good_evening">Добрый вечер</string>
+    <string name="today_statistics">Статистика за сегодня</string>
+    <string name="completed_tasks">завершённых задач</string>
+    <string name="work">Работа</string>
+    <string name="pause">Пауза</string>
+    <string name="skip">Пропустить</string>
+    <string name="quit">Выйти</string>
+    
+    <!-- Проекты -->
+    <string name="my_projects">Мои проекты</string>
+    <string name="create_project">Создать проект</string>
+    <string name="project_name">Название проекта</string>
+    <string name="search_projects">Поиск проектов&#8230;</string>
+    
+    <!-- Создание проекта -->
+    <string name="task_name_hint">Название задачи</string>
+    <string name="task_name">Название задачи</string>
+    <string name="color_selection">Выбор цвета</string>
+    <string name="priority_label_with_colon">Приоритет:</string>
+    <string name="priority">Приоритет:</string>
+    <string name="priority_low">Низкий</string>
+    <string name="low_priority">Низкий</string>
+    <string name="priority_medium">Средний</string>
+    <string name="medium_priority">Средний</string>
+    <string name="priority_high">Высокий</string>
+    <string name="high_priority">Высокий</string>
+    <string name="time_estimation">Оценка времени</string>
+    <string name="save">Сохранить</string>
+    <string name="tomatoes_count_format">Помидоров: %1$d</string>
+    <string name="tomatoes_count">Помидоров: %d</string>
+    
+    <!-- Статистика -->
+    <string name="statistics">Статистика</string>
+    <string name="tasks_count">Количество задач</string>
+    <string name="total_time_label">Общее время</string>
+    <string name="total_time">Общее время</string>
+    
+    <!-- Сообщения и ошибки -->
+    <string name="login_successful">Вход выполнен успешно</string>
+    <string name="registration_successful">Регистрация завершена</string>
+    <string name="error_required_field">Это поле обязательно</string>
+    <string name="error_invalid_email">Неверный формат email</string>
+    <string name="project_created">Проект создан успешно</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Сообщение от пользователя -->
+    <LinearLayout
+        android:id="@+id/llUserMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_message_user"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:maxWidth="280dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvUserMessageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="Привет, нужна помощь!" />
+
+        <TextView
+            android:id="@+id/tvUserMessageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:alpha="0.7"
+            tools:text="12:30" />
+
+    </LinearLayout>
+
+    <!-- Сообщение от поддержки -->
+    <LinearLayout
+        android:id="@+id/llSupportMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_message_support"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:maxWidth="280dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvSupportMessageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_text_primary"
+            android:textSize="16sp"
+            tools:text="Конечно! Чем могу помочь?" />
+
+        <TextView
+            android:id="@+id/tvSupportMessageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/main_text_secondary"
+            android:textSize="12sp"
+            android:alpha="0.7"
+            tools:text="12:31" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_pink_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/main_text_primary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <!-- Кнопка назад -->
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/back"
+                    android:padding="8dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:tint="@color/main_text_primary"
+                    tools:ignore="ContentDescription" />
+
+                <!-- Заголовок -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/group_session_title"
+                    android:textColor="@color/main_text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Кнопка домой -->
+                <ImageButton
+                    android:id="@+id/ibHome"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/app_name"
+                    android:padding="8dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:tint="@color/main_text_primary"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <!-- Белая карточка с контентом -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="32dp">
+
+                    <!-- Таймер -->
+                    <TextView
+                        android:id="@+id/tvSessionTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25:00:00"
+                        android:textColor="@color/main_accent_purple"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginBottom="48dp"
+                        android:fontFamily="monospace"
+                        tools:text="25:00:00" />
+
+                    <!-- Круг с аватарами участников -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="32dp"
+                        android:gravity="center">
+
+                        <!-- Аватар 1 (сверху) -->
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/ivAvatar1"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:src="@drawable/ic_male_avatar"
+                                android:scaleType="centerCrop" />
+
+                            <View
+                                android:id="@+id/vOnline1"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/online_indicator" />
+
+                        </FrameLayout>
+
+                        <!-- Аватар 2 (слева) -->
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true">
+
+                            <ImageView
+                                android:id="@+id/ivAvatar2"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:src="@drawable/ic_female_avatar"
+                                android:scaleType="centerCrop" />
+
+                            <View
+                                android:id="@+id/vOnline2"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/online_indicator" />
+
+                        </FrameLayout>
+
+                        <!-- Аватар 3 (справа) -->
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true">
+
+                            <ImageView
+                                android:id="@+id/ivAvatar3"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:src="@drawable/ic_default_avatar"
+                                android:scaleType="centerCrop" />
+
+                            <View
+                                android:id="@+id/vOnline3"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/online_indicator"
+                                android:visibility="gone" />
+
+                        </FrameLayout>
+
+                        <!-- Аватар 4 (центр) -->
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/ivAvatar4"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:src="@drawable/ic_male_avatar"
+                                android:scaleType="centerCrop" />
+
+                            <View
+                                android:id="@+id/vOnline4"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/online_indicator" />
+
+                        </FrameLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB кнопка быстрой поддержки в чате -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabQuickSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="@string/quick_chat_support"
+        android:text="@string/quick_chat_support"
+        app:backgroundTint="#FF92EE"
+        app:icon="@drawable/ic_default_avatar"
+        app:iconTint="@color/white"
+        app:tint="@color/white" />
+
+    <!-- FAB кнопка присоединиться (с текстом) -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabJoinSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="300dp"
+        android:contentDescription="@string/join_session"
+        android:text="@string/join_session"
+        app:backgroundTint="#F44336"
+        app:icon="@drawable/ic_join"
+        app:iconTint="@color/white"
+        app:tint="@color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

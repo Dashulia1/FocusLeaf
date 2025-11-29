@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- Аватар -->
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/friend_avatar"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_default_avatar" />
+
+    <!-- Информация о друге -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvFriendName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Alice" />
+
+        <TextView
+            android:id="@+id/tvFriendAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/main_text_secondary"
+            android:textSize="14sp"
+            tools:text="18" />
+
+    </LinearLayout>
+
+    <!-- Статус онлайн -->
+    <View
+        android:id="@+id/vOnlineStatus"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/online_indicator"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <!-- Иконка чата -->
+    <ImageButton
+        android:id="@+id/ibChat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/chat"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_menu_send"
+        android:tint="@color/main_accent_purple"
+        tools:ignore="ContentDescription" />
+
+</LinearLayout>
+
