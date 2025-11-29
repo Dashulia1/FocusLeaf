@@ -1,0 +1,51 @@
+# Команды для добавления README.md в GitHub
+
+## Выполните эти команды по порядку:
+
+cd /Users/dasasergeeva/AndroidStudioProjects/FocusLeaf2
+
+# 1. Инициализация Git (если еще не сделано)
+git init
+
+# 2. Добавление README.md
+git add README.md
+
+# 3. Добавление всех файлов проекта
+git add .
+
+# 4. Создание коммита
+git commit -m "Initial commit: FocusLeaf 2.0 - Add README.md and project documentation"
+
+# 5. Переименование ветки на main
+git branch -M main
+
+# 6. Подключение к GitHub (замените YOUR_USERNAME на ваш GitHub username)
+git remote add origin https://github.com/YOUR_USERNAME/FocusLeaf2.git
+
+# 7. Загрузка на GitHub
+git push -u origin main
+
+---
+
+## Если репозиторий уже создан на GitHub и нужно только обновить README:
+
+cd /Users/dasasergeeva/AndroidStudioProjects/FocusLeaf2
+
+git add README.md
+git commit -m "docs: Update README.md"
+git push origin main
+
+---
+
+## Проверка статуса:
+
+git status
+
+## Просмотр коммитов:
+
+git log --oneline
+
+## Просмотр подключенных remote репозиториев:
+
+git remote -v
+
