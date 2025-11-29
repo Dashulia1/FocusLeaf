@@ -8,3 +8,4 @@ data class ProjectStats(
     val totalTime: Int // в минутах
 )
 
+

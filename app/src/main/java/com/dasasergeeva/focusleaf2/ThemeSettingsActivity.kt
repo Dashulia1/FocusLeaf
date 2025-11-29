@@ -14,24 +14,24 @@ class ThemeSettingsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        setupWindow()
-        
         binding = ActivityThemeSettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        loadCurrentTheme()
+        setupWindow()
         setupStatusBar()
         setupListeners()
-        loadCurrentTheme()
         setupThemeOptions()
     }
 
     /**
-     * Настройка окна: светлый статус бар
+     * Настройка окна: статус бар в зависимости от темы
      */
     private fun setupWindow() {
         window?.let { window ->
+            val isDarkTheme = ThemeManager.getCurrentTheme(this) == ThemeManager.AppTheme.DARK
             WindowInsetsControllerCompat(window, window.decorView).apply {
-                isAppearanceLightStatusBars = true
+                isAppearanceLightStatusBars = !isDarkTheme
             }
         }
     }

@@ -43,14 +43,8 @@ class MainActivity : BaseActivity() {
         
         // Проверяем, авторизован ли пользователь
         if (!PreferencesManager.isUserAuthorized(this)) {
-            // Если пользователь не авторизован, проверяем онбординг
-            if (PreferencesManager.isOnboardingCompleted(this)) {
-                // Онбординг завершен - переходим на LoginActivity
-                navigateToLogin()
-            } else {
-                // Онбординг не завершен - переходим на OnboardingActivity
-                navigateToOnboarding()
-            }
+            // Если пользователь не авторизован, переходим на экран входа
+            navigateToLogin()
             return
         }
         

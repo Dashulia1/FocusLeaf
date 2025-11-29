@@ -26,14 +26,15 @@
             android:orientation="vertical"
             android:padding="32dp">
 
-            <!-- Место для иллюстрации -->
-            <View
-                android:id="@+id/placeholderIllustration"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+            <!-- Иллюстрация онбординга 1 - Человек с телефоном -->
+            <ImageView
+                android:id="@+id/ivIllustration"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
                 android:layout_marginBottom="32dp"
-                android:background="@android:drawable/ic_menu_gallery"
-                android:backgroundTint="#FFB5D1"
+                android:scaleType="fitCenter"
+                android:contentDescription="Организация контента"
+                android:src="@drawable/onboarding_1_organization"
                 tools:ignore="ContentDescription" />
 
             <!-- Заголовок -->

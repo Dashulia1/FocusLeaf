@@ -219,35 +219,42 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- FAB кнопка быстрой поддержки в чате -->
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fabQuickSupport"
-        android:layout_width="wrap_content"
+    <!-- Контейнер для кнопок внизу экрана -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="@string/quick_chat_support"
-        android:text="@string/quick_chat_support"
-        app:backgroundTint="#FF92EE"
-        app:icon="@drawable/ic_default_avatar"
-        app:iconTint="@color/white"
-        app:tint="@color/white" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:paddingBottom="24dp">
 
-    <!-- FAB кнопка присоединиться (с текстом) -->
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fabJoinSession"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="300dp"
-        android:contentDescription="@string/join_session"
-        android:text="@string/join_session"
-        app:backgroundTint="#F44336"
-        app:icon="@drawable/ic_join"
-        app:iconTint="@color/white"
-        app:tint="@color/white" />
+        <!-- FAB кнопка быстрой поддержки в чате (розовая с иконкой пользователя) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabQuickSupport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/quick_chat_support"
+            app:backgroundTint="#FFB6C1"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_default_avatar"
+            app:tint="@color/white" />
+
+        <!-- FAB кнопка присоединиться (с текстом) -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabJoinSession"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/join_session"
+            android:text="@string/join_session"
+            app:backgroundTint="#F44336"
+            app:icon="@drawable/ic_join"
+            app:iconTint="@color/white"
+            app:tint="@color/white" />
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

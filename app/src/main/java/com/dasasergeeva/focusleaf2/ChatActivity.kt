@@ -1,7 +1,9 @@
 package com.dasasergeeva.focusleaf2
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -71,6 +73,17 @@ class ChatActivity : BaseActivity() {
         binding.fabSend.setOnClickListener {
             sendMessage()
         }
+        
+        // Обработка нажатия Enter/Send в поле ввода
+        binding.etMessage.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEND || 
+                (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
+                sendMessage()
+                true
+            } else {
+                false
+            }
+        }
     }
 
     /**
@@ -121,16 +134,21 @@ class ChatActivity : BaseActivity() {
             isUser = true
         )
         
+        val insertPosition = messages.size
         messages.add(userMessage)
-        messagesAdapter.notifyDataSetChanged()
+        messagesAdapter.notifyItemInserted(insertPosition)
         
         // Очищаем поле ввода
         binding.etMessage.text?.clear()
         
+        // Скрываем клавиатуру
+        val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
+        imm.hideSoftInputFromWindow(binding.etMessage.windowToken, 0)
+        
         // Прокрутка к последнему сообщению
         binding.rvMessages.post {
             if (messages.isNotEmpty()) {
-                binding.rvMessages.scrollToPosition(messages.size - 1)
+                binding.rvMessages.smoothScrollToPosition(messages.size - 1)
             }
         }
 
@@ -140,13 +158,14 @@ class ChatActivity : BaseActivity() {
                 text = "Спасибо за ваше сообщение! Обрабатываю ваш запрос...",
                 isUser = false
             )
+            val supportPosition = messages.size
             messages.add(supportMessage)
-            messagesAdapter.notifyDataSetChanged()
+            messagesAdapter.notifyItemInserted(supportPosition)
             
             // Прокрутка к последнему сообщению
             binding.rvMessages.post {
                 if (messages.isNotEmpty()) {
-                    binding.rvMessages.scrollToPosition(messages.size - 1)
+                    binding.rvMessages.smoothScrollToPosition(messages.size - 1)
                 }
             }
         }, 1000)
@@ -166,7 +185,7 @@ class ChatActivity : BaseActivity() {
     /**
      * Адаптер для списка сообщений
      */
-    inner class MessagesAdapter(private val messagesList: List<ChatMessage>) :
+    inner class MessagesAdapter(private val messagesList: MutableList<ChatMessage>) :
         RecyclerView.Adapter<MessagesAdapter.MessageViewHolder>() {
 
         inner class MessageViewHolder(private val binding: ItemMessageBinding) :
@@ -202,7 +221,9 @@ class ChatActivity : BaseActivity() {
         }
 
         override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-            holder.bind(messagesList[position])
+            if (position < messagesList.size) {
+                holder.bind(messagesList[position])
+            }
         }
 
         override fun getItemCount(): Int = messagesList.size

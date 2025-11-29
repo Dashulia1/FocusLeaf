@@ -2,9 +2,12 @@ package com.dasasergeeva.focusleaf2
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.dasasergeeva.focusleaf2.databinding.ActivityProfileBinding
+import com.dasasergeeva.focusleaf2.utils.PreferencesManager
 import com.dasasergeeva.focusleaf2.utils.UserManager
 
 class ProfileActivity : BaseActivity() {
@@ -24,6 +27,7 @@ class ProfileActivity : BaseActivity() {
         loadUserData()
         setupStatistics()
         setupThemeSettingsButton()
+        setupLogoutButton()
     }
 
     /**
@@ -104,6 +108,67 @@ class ProfileActivity : BaseActivity() {
             val intent = android.content.Intent(this, ThemeSettingsActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    /**
+     * Настройка кнопки выхода
+     */
+    private fun setupLogoutButton() {
+        binding.btnLogout.setOnClickListener {
+            showLogoutDialog()
+        }
+        
+        // Длинное нажатие для сброса онбординга (для разработки)
+        binding.btnLogout.setOnLongClickListener {
+            showResetOnboardingDialog()
+            true
+        }
+    }
+    
+    /**
+     * Показать диалог сброса онбординга
+     */
+    private fun showResetOnboardingDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Сброс онбординга")
+            .setMessage("Сбросить онбординг? При следующем запуске приложения вы увидите экраны знакомства.")
+            .setPositiveButton("Сбросить") { _, _ ->
+                PreferencesManager.resetOnboarding(this)
+                Toast.makeText(this, "Онбординг сброшен. Перезапустите приложение.", Toast.LENGTH_LONG).show()
+            }
+            .setNegativeButton("Отмена", null)
+            .show()
+    }
+
+    /**
+     * Показать диалог подтверждения выхода
+     */
+    private fun showLogoutDialog() {
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.logout))
+            .setMessage(getString(R.string.logout_confirmation))
+            .setPositiveButton(getString(R.string.logout)) { _, _ ->
+                performLogout()
+            }
+            .setNegativeButton(getString(R.string.cancel), null)
+            .show()
+    }
+
+    /**
+     * Выполнить выход из аккаунта
+     */
+    private fun performLogout() {
+        // Очищаем авторизацию
+        PreferencesManager.logout(this)
+        
+        // Показываем сообщение
+        Toast.makeText(this, "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show()
+        
+        // Переходим на экран входа
+        val intent = android.content.Intent(this, LoginActivity::class.java)
+        intent.flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK or android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 
     override fun onResume() {

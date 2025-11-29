@@ -8,3 +8,4 @@ data class OverallStats(
     val totalTime: Int // общее время из ВСЕХ проектов (в минутах)
 )
 
+

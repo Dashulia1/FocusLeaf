@@ -59,3 +59,4 @@ class FriendsAdapter(
     override fun getItemCount(): Int = friends.size
 }
 
+

@@ -195,6 +195,8 @@
     <string name="achievement_max_tasks">Максимальное количество выполненных задач</string>
     <string name="achievement_streak">7 дней подряд</string>
     <string name="settings">Settings</string>
+    <string name="logout">Выйти</string>
+    <string name="logout_confirmation">Вы уверены, что хотите выйти из аккаунта?</string>
     
     <!-- Timer Settings -->
     <string name="timer_settings_title">Таймер</string>

@@ -26,14 +26,15 @@
             android:orientation="vertical"
             android:padding="32dp">
 
-            <!-- Место для иллюстрации -->
-            <View
-                android:id="@+id/placeholderIllustration"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+            <!-- Иллюстрация онбординга 2 - Телефон с аналитикой -->
+            <ImageView
+                android:id="@+id/ivIllustration"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
                 android:layout_marginBottom="32dp"
-                android:background="@android:drawable/ic_menu_gallery"
-                android:backgroundTint="#FFB5D1"
+                android:scaleType="fitCenter"
+                android:contentDescription="Аналитика и статистика"
+                android:src="@drawable/onboarding_2_analytics"
                 tools:ignore="ContentDescription" />
 
             <!-- Заголовок -->

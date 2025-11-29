@@ -85,5 +85,15 @@ object PreferencesManager {
     fun clearAll(context: Context) {
         getPrefs(context).edit().clear().apply()
     }
+
+    /**
+     * Сброс онбординга (для тестирования)
+     */
+    fun resetOnboarding(context: Context) {
+        getPrefs(context).edit()
+            .putBoolean(KEY_ONBOARDING_COMPLETED, false)
+            .apply()
+    }
 }
+
 

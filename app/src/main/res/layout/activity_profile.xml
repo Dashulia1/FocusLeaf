@@ -294,6 +294,22 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!-- Кнопка выхода -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/logout"
+                android:textColor="@color/error"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="@color/error"
+                app:strokeWidth="2dp"
+                app:cornerRadius="16dp" />
+
             <!-- Достижения -->
             <TextView
                 android:layout_width="match_parent"
